@@ -18,6 +18,10 @@ connection.once("open", () => {
   console.log("Mongo database connection established successfully");
 });
 
+const websitesRouter = require('./routes/websites')
+
+app.use('/websites',websitesRouter)
+
 app.listen(port, () => {
   console.log(`Server is running on port :${port}`);
 });
